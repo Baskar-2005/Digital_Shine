@@ -414,8 +414,9 @@ const ContactForm = () => {
     setErrorMsg('');
 
       try {
-        console.log('[ContactForm] POST /api/contact payload=', form);
-      const res = await fetch('/api/contact', {
+        const API_URL = import.meta.env.VITE_API_URL;
+        console.log('[ContactForm] POST /api/contact payload=', { ...form, apiUrl: API_URL });
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
