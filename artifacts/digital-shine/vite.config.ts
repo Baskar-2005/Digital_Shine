@@ -51,8 +51,12 @@ export default defineConfig({
     host: "0.0.0.0",
     allowedHosts: true,
     proxy: {
-      // Forward API calls from the frontend (port 3000) to the API server (port 3001)
-      "/api": "http://localhost:3001",
+      // Forward API calls from the frontend to the API server.
+      // Local default -> http://localhost:3001
+      // Deployed -> https://digital-shine.onrender.com (via env)
+      "/api": process.env.VITE_API_ORIGIN
+        ? new URL(process.env.VITE_API_ORIGIN).origin
+        : "http://localhost:3001",
     },
     fs: {
       strict: true,

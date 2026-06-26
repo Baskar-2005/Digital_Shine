@@ -4,6 +4,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+logger.info({
+  FRONTEND_ORIGIN: process.env["FRONTEND_ORIGIN"],
+}, "[api-server] loaded env");
+
 const rawPort = process.env["PORT"];
 
 if (!rawPort) {
