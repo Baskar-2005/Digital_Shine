@@ -39,11 +39,11 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    rollupOptions: {
-      // Fix for Vite v7+ where an internal modulepolyfill is treated as a
-      // non-external source import during the source phase build.
-      external: ["vite/modulepreload-polyfill"],
-    },
+    // rollupOptions: {
+    //   // Fix for Vite v7+ where an internal modulepolyfill is treated as a
+    //   // non-external source import during the source phase build.
+    //   external: ["vite/modulepreload-polyfill"],
+    // },
   },
   server: {
     port,
