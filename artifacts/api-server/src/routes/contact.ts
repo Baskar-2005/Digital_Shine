@@ -34,11 +34,20 @@ router.post("/contact", async (req, res) => {
     if (smtpUser && smtpPass && contactTo) {
       try {
         const transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: smtpPort,
-          secure: smtpPort === 465,
-          auth: { user: smtpUser, pass: smtpPass },
-        });
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  family: 4, // Force IPv4
+
+  auth: {
+    user: smtpUser,
+    pass: smtpPass,
+  },
+
+  connectionTimeout: 15000,
+  greetingTimeout: 15000,
+  socketTimeout: 15000,
+});
 
         await transporter.sendMail({
           from: `"Digital Shine Website" <${smtpUser}>`,
