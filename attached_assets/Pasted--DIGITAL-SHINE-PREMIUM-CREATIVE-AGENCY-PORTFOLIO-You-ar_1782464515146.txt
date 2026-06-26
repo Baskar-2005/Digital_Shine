@@ -1,0 +1,639 @@
+# DIGITAL SHINE — PREMIUM CREATIVE AGENCY PORTFOLIO
+
+You are a senior UI/UX designer and award-winning Frontend Engineer.
+
+Your task is to build an **Awwwards-quality**, **premium**, **ultra-modern**, **high-performance**, **fully responsive** agency portfolio website for **Digital Shine**.
+
+This is NOT a template website.
+
+This should feel like it was designed by agencies such as:
+
+• Cuberto
+• Obys
+• Locomotive
+• Active Theory
+• Build in Amsterdam
+• Basic/Dept
+• Resn
+• Awwwards Winners
+• Framer Showcase
+• Linear.app
+• Stripe
+• Vercel
+
+Every section should feel unique and memorable.
+
+---
+
+# VERY IMPORTANT
+
+First install and use **UI Pro Max**.
+
+Execute:
+
+```bash
+npm install -g ui-ux-pro-max-cli
+uipro init --ai codex
+```
+
+Use UI Pro Max components, layouts, animations and design patterns wherever appropriate.
+
+Also install and use:
+
+* Framer Motion
+* Lenis (smooth scrolling)
+* GSAP (for advanced text animations where needed)
+* React Icons
+* Tailwind CSS
+* React Three Fiber (optional hero effects)
+* Lucide Icons
+
+---
+
+# Typography
+
+Use ONLY
+
+Poppins
+
+Weights:
+
+300
+
+400
+
+500
+
+600
+
+700
+
+800
+
+Very clean typography.
+
+Large headings.
+
+Perfect spacing.
+
+---
+
+# Color Palette
+
+Background:
+
+#050816
+
+Surface:
+
+#0F172A
+
+Primary:
+
+#6C63FF
+
+Secondary:
+
+#7C3AED
+
+Accent:
+
+#06B6D4
+
+Highlight:
+
+#22D3EE
+
+Success:
+
+#10B981
+
+White:
+
+#FFFFFF
+
+Text Secondary:
+
+#94A3B8
+
+Cards:
+
+rgba(255,255,255,.04)
+
+Borders:
+
+rgba(255,255,255,.08)
+
+Use beautiful gradients everywhere.
+
+Glow effects.
+
+Glassmorphism.
+
+Aurora backgrounds.
+
+Mesh gradients.
+
+Noise textures.
+
+---
+
+# Design Language
+
+Luxury
+
+Creative
+
+Minimal
+
+Premium
+
+Interactive
+
+Elegant
+
+Futuristic
+
+Not corporate.
+
+Not bootstrap.
+
+Not ordinary.
+
+---
+
+# Animations
+
+Every section should animate.
+
+Use Framer Motion extensively.
+
+Include:
+
+Text reveal
+
+Fade
+
+Slide
+
+Scale
+
+Stagger children
+
+Mouse parallax
+
+Magnetic buttons
+
+Floating objects
+
+Rotating gradients
+
+Animated cursor
+
+Scroll progress bar
+
+Smooth scrolling
+
+Page transitions
+
+Image reveals
+
+Hover distortions
+
+Animated underline
+
+Glowing cards
+
+Background blobs
+
+Marquee text
+
+Infinite logos slider
+
+Number counters
+
+Reveal on viewport
+
+Morphing shapes
+
+Animated gradients
+
+Floating particles
+
+Tilt cards
+
+Interactive CTA
+
+Everything should feel alive.
+
+---
+
+# Loading Experience
+
+Create an amazing loading screen.
+
+Animated logo.
+
+Percentage loader.
+
+Text transitions.
+
+Smooth exit animation.
+
+Then reveal homepage beautifully.
+
+---
+
+# Navigation
+
+Transparent glass navbar.
+
+Blur background.
+
+Scroll detection.
+
+Animated active links.
+
+Mobile menu with smooth animations.
+
+CTA:
+
+Let's Talk
+
+---
+
+# Hero Section
+
+Huge premium hero.
+
+Headline:
+
+"We Build Digital Experiences That Shine."
+
+Subheadline:
+
+"We create modern websites, stunning brands, high-converting UI/UX and powerful digital experiences that help businesses grow."
+
+Buttons:
+
+Start Your Project
+
+View Our Work
+
+Right side:
+
+Interactive 3D objects
+
+Animated gradients
+
+Floating glass cards
+
+Mouse movement interaction
+
+Background particles
+
+Scrolling marquee
+
+---
+
+# Clients Section
+
+Infinite marquee.
+
+Beautiful logos.
+
+Blur to sharp animation.
+
+---
+
+# About Digital Shine
+
+Tell the story.
+
+Who we are.
+
+Mission.
+
+Vision.
+
+Values.
+
+Animated timeline.
+
+---
+
+# Services
+
+Premium bento grid.
+
+Services:
+
+Website Design
+
+Website Development
+
+UI/UX Design
+
+Brand Identity
+
+SEO
+
+Google Business Optimization
+
+Performance Optimization
+
+Landing Pages
+
+E-Commerce
+
+Maintenance
+
+Hosting
+
+Digital Marketing
+
+Each card:
+
+Glass
+
+Glow
+
+Hover expansion
+
+Animated icon
+
+---
+
+# Featured Projects
+
+Beautiful portfolio.
+
+Large cards.
+
+Hover reveals.
+
+Case study pages.
+
+Filters.
+
+Categories.
+
+Luxury animations.
+
+Each project contains:
+
+Hero Image
+
+Description
+
+Technology
+
+Duration
+
+Result
+
+View Case Study
+
+---
+
+# Process
+
+Timeline.
+
+Discovery
+
+Research
+
+Design
+
+Development
+
+Testing
+
+Launch
+
+Support
+
+Animated path.
+
+---
+
+# Why Choose Us
+
+Interactive cards.
+
+Fast Delivery
+
+Modern Design
+
+SEO Ready
+
+Responsive
+
+Affordable
+
+Performance
+
+Creative Team
+
+Client Support
+
+---
+
+# Testimonials
+
+Premium slider.
+
+Glass cards.
+
+Animated quotes.
+
+Client images.
+
+Ratings.
+
+---
+
+# Technologies
+
+Animated grid.
+
+React
+
+Next.js
+
+TypeScript
+
+Tailwind
+
+Node
+
+MongoDB
+
+Firebase
+
+Framer Motion
+
+GSAP
+
+WordPress
+
+Figma
+
+---
+
+# Statistics
+
+Animated counters.
+
+100+
+
+Projects
+
+50+
+
+Clients
+
+5★
+
+Average Rating
+
+99%
+
+Client Satisfaction
+
+---
+
+# FAQ
+
+Animated accordion.
+
+---
+
+# Contact Section
+
+Premium split layout.
+
+Left:
+
+Beautiful CTA.
+
+Right:
+
+Modern contact form.
+
+Fields:
+
+Name
+
+Email
+
+Phone
+
+Company
+
+Budget
+
+Project Details
+
+Submit
+
+Glass inputs.
+
+---
+
+# Footer
+
+Huge premium footer.
+
+Social icons.
+
+Quick links.
+
+Services.
+
+Contact.
+
+Copyright.
+
+Animated gradient.
+
+---
+
+# Extra Premium Features
+
+Custom cursor
+
+Magnetic buttons
+
+Smooth scroll
+
+Page transitions
+
+Section snapping where appropriate
+
+Animated blobs
+
+Noise overlay
+
+Interactive background
+
+Aurora gradients
+
+Animated SVG dividers
+
+Glassmorphism
+
+Floating CTA
+
+Dark mode aesthetics
+
+Hover sound-ready structure
+
+Performance optimized
+
+SEO optimized
+
+Semantic HTML
+
+Accessibility
+
+Fully Responsive
+
+Lazy loading
+
+Image optimization
+
+Code splitting
+
+Reusable components
+
+Perfect folder structure
+
+Clean architecture
+
+---
+
+# Performance
+
+Lighthouse Score:
+
+95+
+
+Accessibility:
+
+95+
+
+SEO:
+
+100
+
+Best Practices:
+
+100
+
+---
+
+# Final Goal
+
+The finished website should make visitors immediately feel that **Digital Shine** is a world-class creative agency. Every interaction should feel premium, every animation should be smooth, and every section should demonstrate exceptional craftsmanship. The result should be good enough to showcase in an Awwwards gallery and should convert visitors into clients by highlighting expertise, creativity, and professionalism.

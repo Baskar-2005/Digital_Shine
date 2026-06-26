@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "sgIgILQClFg5SPaK4Y4kf"
+uri = "file://artifacts/digital-shine/public/hero-bg.png"
+type = "image"
+title = "Abstract dark neon ambient glow"
+
+[[generated]]
+id = "ENNWNXo0mFvGFjiNmiB-F"
+uri = "file://artifacts/digital-shine/public/avatar1.png"
+type = "image"
+title = "Professional avatar 1"
+
+[[generated]]
+id = "F_B79D1yaKswYE55qt0OH"
+uri = "file://artifacts/digital-shine/public/avatar2.png"
+type = "image"
+title = "Professional avatar 2"
+
+[[generated]]
+id = "3faSY5-oSxETjHGZYzgP-"
+uri = "file://artifacts/digital-shine/public/avatar3.png"
+type = "image"
+title = "Professional avatar 3"

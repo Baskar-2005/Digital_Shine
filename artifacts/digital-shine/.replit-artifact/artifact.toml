@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Digital Shine Portfolio"
+version = "1.0.0"
+id = "artifacts/digital-shine"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22975
+
+[services.development]
+run = "pnpm --filter @workspace/digital-shine run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/digital-shine", "run", "build" ]
+publicDir = "artifacts/digital-shine/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22975"
+BASE_PATH = "/"
