@@ -15,19 +15,21 @@ import {
 } from "@/components/ui/accordion";
 
 // ─── Logo ──────────────────────────────────────────────────────────────────
+// Uses the repo-root `logo.png`. In Vite, files served from the site root must
+// be available under `public/`.
 const DiamondLogo = ({ size = 34 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 3L37 13V27L20 37L3 27V13L20 3Z" fill="rgba(108,99,255,0.12)" stroke="#6C63FF" strokeWidth="1.5"/>
-    <path d="M20 9L31 15.5V24.5L20 31L9 24.5V15.5L20 9Z" fill="rgba(108,99,255,0.25)"/>
-    <path d="M20 15L26 18.5V21.5L20 25L14 21.5V18.5L20 15Z" fill="#6C63FF"/>
-    <line x1="20" y1="3" x2="20" y2="0.5" stroke="#22D3EE" strokeWidth="1.5" strokeLinecap="round"/>
-    <line x1="37" y1="13" x2="39.2" y2="11.7" stroke="#22D3EE" strokeWidth="1.5" strokeLinecap="round"/>
-    <line x1="37" y1="27" x2="39.2" y2="28.3" stroke="#22D3EE" strokeWidth="1.5" strokeLinecap="round"/>
-    <line x1="20" y1="37" x2="20" y2="39.5" stroke="#22D3EE" strokeWidth="1.5" strokeLinecap="round"/>
-    <line x1="3" y1="27" x2="0.8" y2="28.3" stroke="#22D3EE" strokeWidth="1.5" strokeLinecap="round"/>
-    <line x1="3" y1="13" x2="0.8" y2="11.7" stroke="#22D3EE" strokeWidth="1.5" strokeLinecap="round"/>
-  </svg>
+  <img
+    src="/logo.png"
+    alt="Digital Shine logo"
+    width={size}
+    height={size}
+    className="block"
+    style={{ width: size, height: size }}
+    loading="eager"
+    draggable={false}
+  />
 );
+
 
 // ─── Project Data ──────────────────────────────────────────────────────────
 type Project = {
@@ -409,19 +411,57 @@ const ContactForm = () => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setStatus('sending');
-    try {
+    setErrorMsg('');
+
+      try {
+        console.log('[ContactForm] POST /api/contact payload=', form);
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
-      if (!res.ok || !data.success) throw new Error(data.error || 'Failed to send');
+
+      // Some failure modes return empty / non-JSON bodies.
+      const contentType = res.headers.get('content-type') || '';
+      const isJson = contentType.includes('application/json');
+
+      let data: any = null;
+      if (isJson) {
+        try {
+          data = await res.json();
+        } catch {
+          data = null;
+        }
+      } else {
+        // Drain body to avoid unread responses affecting debugging.
+        try {
+          await res.text();
+        } catch {
+          // ignore
+        }
+      }
+
+      console.log('[ContactForm] response status=', res.status);
+
+      if (!res.ok) {
+        console.log('[ContactForm] non-OK response body data=', data);
+        const msg = data?.error || `Request failed (${res.status})`;
+        throw new Error(msg);
+      }
+
+      if (!data?.success) {
+        throw new Error(data?.error || 'Failed to send');
+      }
+
       setStatus('success');
       setForm({ name: '', email: '', phone: '', company: '', budget: '$10k – $25k', message: '' });
     } catch (err) {
       setStatus('error');
-      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setErrorMsg(
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.'
+      );
       setTimeout(() => setStatus('idle'), 5000);
     }
   };
@@ -688,7 +728,7 @@ export default function Home() {
           >
             {[...Array(2)].map((_, i) => (
               <React.Fragment key={i}>
-                {['STRIPE', 'LINEAR', 'VERCEL', 'RAYCAST', 'FRAMER', 'FIGMA', 'NOTION', 'DISCORD', 'SHOPIFY', 'ATLASSIAN'].map((logo, j) => (
+                {['KASTHURIBAI', 'NMP', 'SIGNATURE PLUS', 'RAYCAST', 'FRAMER', 'FIGMA', 'NOTION', 'DISCORD', 'SHOPIFY', 'ATLASSIAN'].map((logo, j) => (
                   <span key={j} className="text-2xl md:text-3xl font-black text-white/15 tracking-widest hover:text-white/40 transition-colors cursor-default">{logo}</span>
                 ))}
               </React.Fragment>
@@ -710,17 +750,23 @@ export default function Home() {
                   Since our inception, we've helped ambitious startups and established enterprises transform their digital presence, resulting in measurable growth and unforgettable brand experiences.
                 </p>
                 <div className="grid grid-cols-2 gap-8">
-                  <div><div className="text-4xl font-bold text-white mb-2"><AnimatedNumber end={10} />+</div><div className="text-[#94A3B8]">Years Experience</div></div>
-                  <div><div className="text-4xl font-bold text-white mb-2"><AnimatedNumber end={50} />+</div><div className="text-[#94A3B8]">Industry Awards</div></div>
+                  <div><div className="text-4xl font-bold text-white mb-2">2+</div><div className="text-[#94A3B8]">Years Experience</div></div>
+                  <div><div className="text-4xl font-bold text-white mb-2"><AnimatedNumber end={20} />+</div><div className="text-[#94A3B8]">Industry Awards</div></div>
                 </div>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}
                 className="relative aspect-square rounded-3xl overflow-hidden bg-[#0F172A] border border-white/5 p-2">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#6C63FF]/20 to-[#06B6D4]/20 mix-blend-overlay z-10" />
-                <div className="w-full h-full bg-[#0F172A] rounded-2xl relative overflow-hidden flex items-center justify-center">
+                  <div className="w-full h-full bg-[#0F172A] rounded-2xl relative overflow-hidden flex items-center justify-center">
                   <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center opacity-40 mix-blend-luminosity grayscale hover:grayscale-0 transition-all duration-1000" />
-                  <div className="relative z-20"><DiamondLogo size={64} /></div>
+                  <img
+                    src="/About.png"
+                    alt="About Digital Shine"
+                    className="relative z-20 w-full h-full object-cover"
+                    loading="eager"
+                    draggable={false}
+                  />
                 </div>
               </motion.div>
             </div>
